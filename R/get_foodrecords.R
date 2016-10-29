@@ -24,18 +24,22 @@ get_foodrecords = function(predator=NULL, prey=NULL, detailed=FALSE) {
         stop("No query parameters were provided.")
     }
     foodrecords = jsonlite::fromJSON(query, flatten=TRUE)[[1]]
-    col_names = matrix(c(
-        "predator.id", "pred_id",
-        "prey.id", "prey_id",
-        "predator.taxon", "predator",
-        "prey.taxon", "prey",
-        "predator.count", "pred_amount",
-        "prey.count", "prey_amount",
-        "details.locality.coordinates.longitude", "longitude",
-        "details.locality.coordinates.latitude", "latitude",
-        "details.locality.country", "country",
-        "details.locality.state", "state", 
-        "details.locality.county", "county"), ncol = 2, byrow = TRUE)
+    col_names = matrix(
+        ncol = 2, 
+        byrow = TRUE,
+        data = c(
+            "predator.id", "pred_id",
+            "prey.id", "prey_id",
+            "predator.taxon", "predator",
+            "prey.taxon", "prey",
+            "predator.count", "pred_amount",
+            "prey.count", "prey_amount",
+            "details.locality.coordinates.longitude", "longitude",
+            "details.locality.coordinates.latitude", "latitude",
+            "details.locality.country", "country",
+            "details.locality.state", "state", 
+            "details.locality.county", "county")
+        )
     foodrecords = foodrecords[,col_names[,1]]
     colnames(foodrecords) = col_names[,2]
     return(foodrecords)
