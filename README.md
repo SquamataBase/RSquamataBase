@@ -13,6 +13,8 @@ install_github("SquamataBase/RSquamataBase")
 ## Usage
 
 ```
+library(RSquamataBase)
+
 # find all prey records for snakes in the family Colubridae
 get_foodrecords(predator="Colubridae")
 
