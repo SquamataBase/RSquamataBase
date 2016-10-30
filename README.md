@@ -10,7 +10,7 @@ library(devtools)
 install_github("SquamataBase/RSquamataBase")
 ```
 
-## Useage
+## Usage
 
 ```
 # find all prey records for snakes in the family Colubridae
