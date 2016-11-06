@@ -21,7 +21,8 @@ group_prey = function(x, categories, FUN=NULL) {
         expressions = lapply(categories, function(z) parse(text=gsub("(\\w+?)(?=\\s*?<)", "y", z, perl=TRUE)))
         catg = sapply(expressions, function(z) eval(z))
         catg[which(is.na(catg), arr.ind=TRUE)] = FALSE
-        catg = cbind(catg, rowSums(catg) == 0)
+        stopifnot((rowsums <- rowSums(catg)) <= 1)  # assert prey categories are mutually exclusive
+        catg = cbind(catg, rowsums == 0)
         catgs = apply(catg, 1, function(z) opts[z])
     }
 
