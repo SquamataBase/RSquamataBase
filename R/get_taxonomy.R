@@ -2,13 +2,13 @@ get_taxonomy = function(taxon_name=NULL, taxon_id=NULL) {
     .stagger_request()
     if (!is.null(taxon_name) && is.null(taxon_id)) {
         stopifnot(inherits(taxon_name, "character"))
-        query = sprintf("http://localhost:8000/data/taxonomy/?taxon_name=%s", gsub(" ", "+", taxon_name))
+        query = sprintf("http://localhost:8000/data/taxonomy/?taxon_name=%s", url_encode(taxon_name))
     } else if (!is.null(taxon_id) && is.null(taxon_name)) {
         stopifnot(inherits(taxon_id, "integer"))
-        query = sprintf("http://localhost:8000/data/taxonomy/?taxon_id=%s", taxon_id)
+        query = sprintf("http://localhost:8000/data/taxonomy/?taxon_id=%s", url_encode(taxon_id))
     } else if (!is.null(taxon_name) && !is.null(taxon_id)) {
         stopifnot(inherits(taxon_name, "character") && inherits(taxon_id, "integer"))
-        query = sprintf("http://localhost:8000/data/taxonomy/?taxon_name=%s&taxon_id=%s", gsub(" ", "+", taxon_name), taxon_id)
+        query = sprintf("http://localhost:8000/data/taxonomy/?taxon_name=%s&taxon_id=%s", url_encode(taxon_name), url_encode(taxon_id))
     } else {
         stop("No query parameters were provided.")
     }

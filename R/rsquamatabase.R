@@ -19,10 +19,14 @@ assign("PREVIOUS_REQUEST_TIME", Sys.time(), envir=rsquamatabase)
     }
 
     # column names returned by fromJSON
-    json_names = c("predator.id",
-                   "prey.id",
+    json_names = c("predator.specimen_id",
+                   "prey.specimen_id",
                    "predator.taxon",
                    "prey.taxon",
+                   "predator.taxon_id",
+                   "prey.taxon_id",
+                   "predator.taxon_rank",
+                   "prey.taxon_rank",
                    "predator.count",
                    "prey.count",
                    "predator.mass",
