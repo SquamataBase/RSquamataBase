@@ -21,6 +21,6 @@ get_foodrecords(predator="Colubridae")
 # find all records of colubrid snakes eating frogs
 get_foodrecords(predator="Colubridae", prey="Anura")
 
-# find all records of colubrid snakes hylid frogs
+# find all records of colubrid snakes eating hylid frogs
 get_foodrecords(predator="Colubridae", prey="Hylidae")
 ```
