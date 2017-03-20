@@ -24,3 +24,5 @@ get_foodrecords(predator="Colubridae", prey="Anura")
 # find all records of colubrid snakes eating hylid frogs
 get_foodrecords(predator="Colubridae", prey="Hylidae")
 ```
+
+Note that SquamataBase must first be installed and the SquamataBase server needs to be running for the above examples to work.
