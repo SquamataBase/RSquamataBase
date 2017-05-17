@@ -9,7 +9,7 @@ group_prey = function(x, categories, FUN=NULL) {
     catgs = character(nrow(x))
 
     if (is.null(FUN)) {
-        hierarchy = get_taxonomy(taxon_id=x$prey_taxon_id)
+        hierarchy = get_taxonomy(taxon_id=unique(x$prey_taxon_id))
         for (h in hierarchy[[2]]) {
             catg = sapply(categories, function(s) { length(intersect(h$scientific_name, s)) > 0 })
             stopifnot(sum(catg) <= 1)  # assert prey categories are mutually exclusive
