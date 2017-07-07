@@ -7,4 +7,4 @@ Author: Michael Grundler
 Maintainer: Michael Grundler <mcgrundler@gmail.com>
 Description: An R package to download data exposed by the SquamataBase web API
 License: GPL (>= 2)
-Imports: curl, jsonlite
+Imports: curl, jsonlite, ape
