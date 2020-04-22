@@ -1,3 +1,5 @@
+***This is no longer maintained. Please go to github.com/blueraleigh/squamatabase for the current version.***
+
 # RSquamataBase
 
 An R package to interface with the SquamataBase web API.
